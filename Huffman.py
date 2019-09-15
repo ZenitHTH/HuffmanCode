@@ -77,6 +77,8 @@ class Huffman:
     def Decoding(code,encoding):    
         str_d = []
         alphabet = []
+        i = 1
+        alphabet.append(" > gi|12345678| DNA Sequence \n")
         for s in encoding:
             str_d.append(s)
             #print("str : " + "".join(str_))
@@ -86,8 +88,12 @@ class Huffman:
                     #print("I'm In")
                     alphabet.append(str(c[0]))
                     str_d.clear()
+                    i = i + 1
                     break
-
+            if i == 70 :
+                alphabet.append("\n")
+                i = 1
+            
         return "".join(alphabet)        
 
     def Encoding(code,dna):
